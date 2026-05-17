@@ -8,17 +8,61 @@ int main()
 
     User user("Ivan");
 
-    Workout push("17.05.2026", "Push");
+    int choice;
 
-    Exercise bench("Bench Press");
-    bench.addSet(Set(10, 80));
-    bench.addSet(Set(8, 85));
+    do
+    {
+        cout << "\n=== FITNESS TRACKER ===" << endl;
+        cout << "1. Add Workout" << endl;
+        cout << "2. Show Workouts" << endl;
+        cout << "3. Exit" << endl;
 
-    push.addExercise(bench);
+        cin >> choice;
 
-    user.addWorkout(push);
+        if (choice == 1)
+        {
 
-    user.showWorkouts();
+            string date, type;
+
+            cout << "Workout date: ";
+            cin >> date;
+
+            cout << "Workout type: ";
+            cin >> type;
+
+            Workout workout(date, type);
+
+            string exName;
+
+            cout << "Exercise name: ";
+            cin >> exName;
+
+            Exercise ex(exName);
+
+            int reps;
+            double weight;
+
+            cout << "Reps: ";
+            cin >> reps;
+
+            cout << "Weight: ";
+            cin >> weight;
+
+            ex.addSet(Set(reps, weight));
+
+            workout.addExercise(ex);
+
+            user.addWorkout(workout);
+
+            cout << "Workout added!" << endl;
+        }
+
+        else if (choice == 2)
+        {
+            user.showWorkouts();
+        }
+
+    } while (choice != 3);
 
     return 0;
 }

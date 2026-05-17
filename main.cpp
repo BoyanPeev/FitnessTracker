@@ -1,20 +1,24 @@
 #include <iostream>
-#include "Workout.h"
+#include "User.h"
 
 using namespace std;
 
 int main()
 {
 
-    Workout workout("17.05.2026", "Push");
+    User user("Ivan");
+
+    Workout push("17.05.2026", "Push");
 
     Exercise bench("Bench Press");
     bench.addSet(Set(10, 80));
     bench.addSet(Set(8, 85));
 
-    workout.addExercise(bench);
+    push.addExercise(bench);
 
-    workout.showWorkout();
+    user.addWorkout(push);
+
+    user.showWorkouts();
 
     return 0;
 }

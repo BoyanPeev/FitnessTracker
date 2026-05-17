@@ -1,17 +1,20 @@
 #include <iostream>
-#include "Exercise.h"
+#include "Workout.h"
 
 using namespace std;
 
 int main()
 {
 
-    Exercise ex("Bench Press");
+    Workout workout("17.05.2026", "Push");
 
-    ex.addSet(Set(10, 80));
-    ex.addSet(Set(8, 85));
+    Exercise bench("Bench Press");
+    bench.addSet(Set(10, 80));
+    bench.addSet(Set(8, 85));
 
-    ex.showExercise();
+    workout.addExercise(bench);
+
+    workout.showWorkout();
 
     return 0;
 }

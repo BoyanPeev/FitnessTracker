@@ -18,7 +18,8 @@ int main()
         cout << "4. Show Profile" << endl;
         cout << "5. Exit" << endl;
         cout << "5. Personal Record" << endl;
-        cout << "6. Exit" << endl;
+        cout << "6. Workout Statistics" << endl;
+        cout << "7. Exit" << endl;
 
         cin >> choice;
         cin.ignore();
@@ -78,7 +79,12 @@ int main()
             user.showPersonalRecord();
         }
 
-    } while (choice != 6);
+        else if (choice == 6)
+        {
+            user.showWorkoutStatistics();
+        }
+
+    } while (choice != 7);
 
     return 0;
 }

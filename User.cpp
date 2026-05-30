@@ -106,3 +106,11 @@ void User::showProfile() const
     cout << "Weight: " << bodyWeight << " kg" << endl;
     cout << "Goal: " << goal << endl;
 }
+
+void User::showWorkoutStatistics() const
+{
+    cout << "\n=== WORKOUT STATISTICS ===" << endl;
+    cout << "Total workouts: "
+         << workouts.size()
+         << endl;
+}

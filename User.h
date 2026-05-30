@@ -29,6 +29,8 @@ public:
     void editProfile();
 
     void showProfile() const;
+
+    void showWorkoutStatistics() const;
 };
 
 #endif

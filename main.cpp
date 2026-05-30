@@ -38,24 +38,36 @@ int main()
 
             Workout workout(date, type);
 
-            cout << "Exercise name: ";
-            getline(cin, exName);
+            char addAnotherExercise = 'y';
 
-            Exercise ex(exName);
+            while (addAnotherExercise == 'y' || addAnotherExercise == 'Y')
+            {
+                string exName;
 
-            int reps;
-            double weight;
+                cout << "\nExercise name: ";
+                getline(cin, exName);
 
-            cout << "Reps: ";
-            cin >> reps;
+                Exercise ex(exName);
 
-            cout << "Weight: ";
-            cin >> weight;
+                int reps;
+                double weight;
 
-            cin.ignore();
+                cout << "Reps: ";
+                cin >> reps;
 
-            ex.addSet(Set(reps, weight));
-            workout.addExercise(ex);
+                cout << "Weight: ";
+                cin >> weight;
+
+                cin.ignore();
+
+                ex.addSet(Set(reps, weight));
+
+                workout.addExercise(ex);
+
+                cout << "Add another exercise? (y/n): ";
+                cin >> addAnotherExercise;
+                cin.ignore();
+            }
             user.addWorkout(workout);
 
             cout << "Workout added!" << endl;

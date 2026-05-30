@@ -1,39 +1,26 @@
 #ifndef EXERCISE_H
 #define EXERCISE_H
 
-#include <iostream>
 #include <vector>
+#include <string>
 #include "Set.h"
-
-using namespace std;
 
 class Exercise
 {
 private:
-    string name;
-    vector<Set> sets;
+    std::string name;
+    std::vector<Set> sets;
 
 public:
-    Exercise(string n)
-    {
-        name = n;
-    }
+    Exercise(std::string n);
 
-    void addSet(const Set &s)
-    {
-        sets.push_back(s);
-    }
+    std::string getName() const;
 
-    void showExercise()
-    {
-        cout << "Exercise: " << name << endl;
+    void addSet(const Set& s);
 
-        for (int i = 0; i < sets.size(); i++)
-        {
-            cout << "Set " << i + 1 << ": ";
-            sets[i].showSet();
-        }
-    }
+    void showExercise() const;
+
+    double getMaxWeight() const;
 };
 
 #endif

@@ -1,5 +1,6 @@
 #include "User.h"
 #include <iostream>
+#include <map>
 
 using namespace std;
 
@@ -34,7 +35,48 @@ int User::getWorkoutCount() const
 
 void User::showPersonalRecord() const
 {
-    cout << "\nPersonal Record feature coming soon." << endl;
+    std::map<std::string, double> personalRecords;
+
+    for (int i = 0; i < workouts.size(); i++)
+    {
+        const std::vector<Exercise> &exercises =
+            workouts[i].getExercises();
+
+        for (int j = 0; j < exercises.size(); j++)
+        {
+            std::string exerciseName =
+                exercises[j].getName();
+
+            double currentMax =
+                exercises[j].getMaxWeight();
+
+            if (personalRecords.find(exerciseName) ==
+                personalRecords.end())
+            {
+                personalRecords[exerciseName] =
+                    currentMax;
+            }
+            else if (currentMax >
+                     personalRecords[exerciseName])
+            {
+                personalRecords[exerciseName] =
+                    currentMax;
+            }
+        }
+    }
+
+    cout << "\n=== PERSONAL RECORDS ===" << endl;
+
+    for (auto it = personalRecords.begin();
+         it != personalRecords.end();
+         it++)
+    {
+        cout << it->first
+             << " -> "
+             << it->second
+             << " kg"
+             << endl;
+    }
 }
 
 void User::editProfile()

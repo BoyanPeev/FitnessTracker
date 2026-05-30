@@ -20,6 +20,8 @@ public:
     void showWorkout() const;
 
     int getExerciseCount() const;
+
+    const std::vector<Exercise> &getExercises() const;
 };
 
 #endif

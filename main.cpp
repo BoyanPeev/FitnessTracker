@@ -17,6 +17,8 @@ int main()
         cout << "3. Edit Profile" << endl;
         cout << "4. Show Profile" << endl;
         cout << "5. Exit" << endl;
+        cout << "5. Personal Record" << endl;
+        cout << "6. Exit" << endl;
 
         cin >> choice;
         cin.ignore();
@@ -47,7 +49,7 @@ int main()
             cout << "Weight: ";
             cin >> weight;
 
-            cin.ignore(); // IMPORTANT after numeric input
+            cin.ignore();
 
             ex.addSet(Set(reps, weight));
             workout.addExercise(ex);
@@ -65,12 +67,18 @@ int main()
         {
             user.editProfile();
         }
+
         else if (choice == 4)
         {
             user.showProfile();
         }
 
-    } while (choice != 5);
+        else if (choice == 5)
+        {
+            user.showPersonalRecord();
+        }
+
+    } while (choice != 6);
 
     return 0;
 }

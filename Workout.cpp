@@ -29,3 +29,8 @@ int Workout::getExerciseCount() const
 {
     return exercises.size();
 }
+
+const std::vector<Exercise> &Workout::getExercises() const
+{
+    return exercises;
+}

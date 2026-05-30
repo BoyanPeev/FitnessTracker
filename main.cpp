@@ -20,7 +20,8 @@ int main()
         cout << "5. Personal Record" << endl;
         cout << "6. Workout Statistics" << endl;
         cout << "7. Exercise Statistics" << endl;
-        cout << "8. Exit" << endl;
+        cout << "8. Weekly Summary" << endl;
+        cout << "9. Exit" << endl;
 
         cin >> choice;
         cin.ignore();
@@ -90,7 +91,12 @@ int main()
             user.showExerciseStatistics();
         }
 
-    } while (choice != 8);
+        else if (choice == 8)
+        {
+            user.showWeeklySummary();
+        }
+
+    } while (choice != 9);
 
     return 0;
 }

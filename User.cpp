@@ -130,3 +130,25 @@ void User::showExerciseStatistics() const
          << totalExercises
          << endl;
 }
+
+void User::showWeeklySummary() const
+{
+    int totalWorkouts = workouts.size();
+
+    int totalExercises = 0;
+
+    for (int i = 0; i < workouts.size(); i++)
+    {
+        totalExercises +=
+            workouts[i].getExerciseCount();
+    }
+
+    cout << "\n=== WEEKLY SUMMARY ===" << endl;
+    cout << "Workouts: "
+         << totalWorkouts
+         << endl;
+
+    cout << "Exercises: "
+         << totalExercises
+         << endl;
+}

@@ -14,10 +14,12 @@ int main()
         cout << "\n=== FITNESS TRACKER ===" << endl;
         cout << "1. Add Workout" << endl;
         cout << "2. Show Workouts" << endl;
-        cout << "3. Exit" << endl;
+        cout << "3. Edit Profile" << endl;
+        cout << "4. Show Profile" << endl;
+        cout << "5. Exit" << endl;
 
         cin >> choice;
-        cin.ignore(); // FIX: clears buffer for getline
+        cin.ignore();
 
         if (choice == 1)
         {
@@ -53,12 +55,22 @@ int main()
 
             cout << "Workout added!" << endl;
         }
+
         else if (choice == 2)
         {
             user.showWorkouts();
         }
 
-    } while (choice != 3);
+        else if (choice == 3)
+        {
+            user.editProfile();
+        }
+        else if (choice == 4)
+        {
+            user.showProfile();
+        }
+
+    } while (choice != 5);
 
     return 0;
 }

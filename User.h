@@ -9,6 +9,10 @@ class User
 {
 private:
     std::string name;
+    int age;
+    double bodyWeight;
+    std::string goal;
+
     std::vector<Workout> workouts;
 
 public:
@@ -21,6 +25,10 @@ public:
     int getWorkoutCount() const;
 
     void showPersonalRecord() const;
+
+    void editProfile();
+
+    void showProfile() const;
 };
 
 #endif

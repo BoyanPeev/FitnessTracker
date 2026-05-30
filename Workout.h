@@ -1,41 +1,25 @@
 #ifndef WORKOUT_H
 #define WORKOUT_H
 
-#include <iostream>
 #include <vector>
+#include <string>
 #include "Exercise.h"
-
-using namespace std;
 
 class Workout
 {
 private:
-    string date;
-    string type;
-    vector<Exercise> exercises;
+    std::string date;
+    std::string type;
+    std::vector<Exercise> exercises;
 
 public:
-    Workout(string d, string t)
-    {
-        date = d;
-        type = t;
-    }
+    Workout(std::string d, std::string t);
 
-    void addExercise(const Exercise &e)
-    {
-        exercises.push_back(e);
-    }
+    void addExercise(const Exercise &e);
 
-    void showWorkout()
-    {
-        cout << "\nWorkout Date: " << date << endl;
-        cout << "Workout Type: " << type << endl;
+    void showWorkout() const;
 
-        for (int i = 0; i < exercises.size(); i++)
-        {
-            exercises[i].showExercise();
-        }
-    }
+    int getExerciseCount() const;
 };
 
 #endif

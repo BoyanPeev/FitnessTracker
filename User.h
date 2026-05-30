@@ -1,39 +1,26 @@
 #ifndef USER_H
 #define USER_H
 
-#include <iostream>
 #include <vector>
+#include <string>
 #include "Workout.h"
-
-using namespace std;
 
 class User
 {
 private:
-    string name;
-    vector<Workout> workouts;
+    std::string name;
+    std::vector<Workout> workouts;
 
 public:
-    User(string n)
-    {
-        name = n;
-    }
+    User(std::string n);
 
-    void addWorkout(const Workout &w)
-    {
-        workouts.push_back(w);
-    }
+    void addWorkout(const Workout &w);
 
-    void showWorkouts()
-    {
+    void showWorkouts() const;
 
-        cout << "\nUser: " << name << endl;
+    int getWorkoutCount() const;
 
-        for (int i = 0; i < workouts.size(); i++)
-        {
-            workouts[i].showWorkout();
-        }
-    }
+    void showPersonalRecord() const;
 };
 
 #endif

@@ -21,7 +21,6 @@ int main()
 
         if (choice == 1)
         {
-
             string date, type;
 
             cout << "Workout date: ";
@@ -37,7 +36,7 @@ int main()
             cout << "Exercise name: ";
             cin >> exName;
 
-            Exercise ex(exName);
+            Exercise ex(exName); // <-- ТУК Е ВАЖНО
 
             int reps;
             double weight;

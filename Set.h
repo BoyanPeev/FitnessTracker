@@ -3,8 +3,6 @@
 
 #include <iostream>
 
-using namespace std;
-
 class Set
 {
 private:
@@ -12,17 +10,12 @@ private:
     double weight;
 
 public:
-    Set(int r, double w)
-    {
-        reps = r;
-        weight = w;
-    }
+    Set(int r, double w);
 
-    void showSet()
-    {
-        cout << reps << " reps - "
-             << weight << " kg" << endl;
-    }
+    int getReps() const;
+    double getWeight() const;
+
+    void showSet() const;
 };
 
 #endif

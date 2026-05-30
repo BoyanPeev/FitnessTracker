@@ -5,7 +5,6 @@ using namespace std;
 
 int main()
 {
-
     User user("Ivan");
 
     int choice;
@@ -18,25 +17,24 @@ int main()
         cout << "3. Exit" << endl;
 
         cin >> choice;
+        cin.ignore(); // FIX: clears buffer for getline
 
         if (choice == 1)
         {
-            string date, type;
+            string date, type, exName;
 
             cout << "Workout date: ";
-            cin >> date;
+            getline(cin, date);
 
             cout << "Workout type: ";
-            cin >> type;
+            getline(cin, type);
 
             Workout workout(date, type);
 
-            string exName;
-
             cout << "Exercise name: ";
-            cin >> exName;
+            getline(cin, exName);
 
-            Exercise ex(exName); // <-- ТУК Е ВАЖНО
+            Exercise ex(exName);
 
             int reps;
             double weight;
@@ -47,15 +45,14 @@ int main()
             cout << "Weight: ";
             cin >> weight;
 
+            cin.ignore(); // IMPORTANT after numeric input
+
             ex.addSet(Set(reps, weight));
-
             workout.addExercise(ex);
-
             user.addWorkout(workout);
 
             cout << "Workout added!" << endl;
         }
-
         else if (choice == 2)
         {
             user.showWorkouts();

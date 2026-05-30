@@ -114,3 +114,19 @@ void User::showWorkoutStatistics() const
          << workouts.size()
          << endl;
 }
+
+void User::showExerciseStatistics() const
+{
+    int totalExercises = 0;
+
+    for (int i = 0; i < workouts.size(); i++)
+    {
+        totalExercises +=
+            workouts[i].getExerciseCount();
+    }
+
+    cout << "\n=== EXERCISE STATISTICS ===" << endl;
+    cout << "Total exercises: "
+         << totalExercises
+         << endl;
+}

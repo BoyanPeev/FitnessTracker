@@ -31,6 +31,8 @@ public:
     void showProfile() const;
 
     void showWorkoutStatistics() const;
+
+    void showExerciseStatistics() const;
 };
 
 #endif
